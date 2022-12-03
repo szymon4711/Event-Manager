@@ -7,4 +7,8 @@ $path = parse_url($path, PHP_URL_PATH);
 
 Routing::get('index', 'DefaultController');
 Routing::get('events', 'DefaultController');
+Routing::get('myEvents', 'DefaultController');
+Routing::get('notices', 'DefaultController');
+Routing::get('settings', 'DefaultController');
+
 Routing::run($path);
