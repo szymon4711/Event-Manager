@@ -6,13 +6,13 @@ class DefaultController extends AppController {
 
     public function index(){
         // TODO display login.html
-        die("index method");
+        $this->render('login');
 
     }
 
     public function events() {
         // TODO display events.html
-        die("events method");
+        $this->render('events');
     }
 
 
