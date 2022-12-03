@@ -1,0 +1,165 @@
+body {
+    margin: 0;
+    font-family: 'Raleway';
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: 
+        linear-gradient(113.69deg,
+            rgba(255, 255, 255, 0.3) 45.15%,
+            rgba(255, 255, 255, 0) 45.15%,
+            rgba(255, 255, 255, 0) 45.15%,
+            rgba(255, 255, 255, 0) 50.97%),
+        linear-gradient(127.27deg,
+            #01CAD9 0%, #F885E7 80.95%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.logo {
+    width: 50%;
+    text-align: center;
+}
+
+.login-container {
+    width: 50%;
+    
+}
+
+form.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 65vh;
+    margin-left: 60px;
+    box-shadow: 0px 3px 6px gray;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 75px
+}
+
+.loginButton {
+    width: 50%;
+    border: none;
+    color: white;
+    margin: 1em;
+    line-height: 3em;
+    margin-top: 3em;
+
+
+    background: linear-gradient(271.65deg, #ED42DB 0%, #01BBE1 97.03%);
+    border-radius: 35px;
+    font-family: 'Raleway';
+    box-shadow: 0px 3px 6px gray;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 1em;
+    margin: 1em;
+    width: 50%;
+    font-family: 'Raleway', FontAwesome;
+}
+
+.home {
+    background: rgba(255, 255, 255, 0.73);
+    border-radius: 26.6806px;
+    color: black;
+    font-family: 'Raleway';
+    font-size: 25px;
+    border: none;
+    color: black;
+    margin: 1em;
+    line-height: 3em;
+    margin-top: 3em;
+    align-self: flex-start;
+    width: 10vw;
+    box-shadow: 0px 3px 6px gray;
+    position: absolute;
+    top: 0;
+    margin-left: 0;
+}
+/* ---------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-device-width: 420px) {
+
+    .container {
+        flex-direction: column;
+        align-content: flex-start;
+    }
+
+    * {
+        font-size: 36px;
+    }
+
+    .login-container,
+    .logo {
+        width: 100%;
+    }
+
+    .login-container {
+        height: 70%;
+    }
+    .logo {
+        height: 20%;
+    }
+
+    .home {
+        width: 30vw;
+    }
+
+    form.login {
+        margin: auto;
+        height: 50vh;
+    }
+
+    img {
+        height: 5em;
+        margin: 2em;
+
+    }
+}
