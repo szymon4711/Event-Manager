@@ -17,10 +17,19 @@
             <img src="public/img/logo.svg">
         </div>
         <div class="login-container">
-            <form class="login">
+            <form class="login" action="login" method="POST">
+                <div class="messages">
+                    <?php
+                        if (isset($messages)) {
+                            foreach ($messages as $message) {
+                                echo $message;
+                            }
+                        }
+                    ?>
+                </div>
                 <input name="username" type="text" placeholder="&#xf007;   username">
                 <input name="password" type="password" placeholder="&#xf023;   password">
-                <button class="loginButton">
+                <button class="loginButton" type="submit">
                     <i class="fa-solid fa-arrow-right-to-bracket"></i> &nbsp; login
                 </button>
             </form>
