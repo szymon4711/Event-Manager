@@ -53,46 +53,10 @@
 
             <section class="events">
                 <div id="event-1">
-                    <img src="public/img/uploads/zdj.svg">
+                    <img src="public/uploads/<?= $event->getImage() ?>">
                     <div>
-                        <h2>Title</h2>
-                        <p>description</p>
-                        <div class="social-section">
-                            <i class="fa-regular fa-circle-check"> 600</i>
-                            <i class="fa-regular fa-circle-question"> 600</i>
-                            <i class="fa-regular fa-circle-xmark"> 600</i>
-                        </div>
-                    </div>
-                </div>
-                <div id="event-2">
-                    <img src="public/img/uploads/zdj.svg">
-                    <div>
-                        <h2>Title</h2>
-                        <p>description</p>
-                        <div class="social-section">
-                            <i class="fa-regular fa-circle-check"> 600</i>
-                            <i class="fa-regular fa-circle-question"> 600</i>
-                            <i class="fa-regular fa-circle-xmark"> 600</i>
-                        </div>
-                    </div>
-                </div>
-                <div id="event-3">
-                    <img src="public/img/uploads/zdj.svg">
-                    <div>
-                        <h2>Title</h2>
-                        <p>description</p>
-                        <div class="social-section">
-                            <i class="fa-regular fa-circle-check"> 600</i>
-                            <i class="fa-regular fa-circle-question"> 600</i>
-                            <i class="fa-regular fa-circle-xmark"> 600</i>
-                        </div>
-                    </div>
-                </div>
-                <div id="event-4">
-                    <img src="public/img/uploads/zdj.svg">
-                    <div>
-                        <h2>Title</h2>
-                        <p>description</p>
+                        <h2><?= $event->getTitle() ?></h2>
+                        <p><?= $event->getDescription() ?></p>
                         <div class="social-section">
                             <i class="fa-regular fa-circle-check"> 600</i>
                             <i class="fa-regular fa-circle-question"> 600</i>
