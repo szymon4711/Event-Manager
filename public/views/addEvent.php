@@ -51,9 +51,9 @@
             </div>
         </header>
 
-        <section class="events">
+        <section class="events-form">
             <h1>UPLOAD</h1>
-            <form action="addEvent">
+            <form action="addEvent" method="POST" enctype="multipart/form-data">
 
                 <?php
                 if (isset($messages)) {

@@ -11,5 +11,7 @@ Routing::get('myEvents', 'DefaultController');
 Routing::get('notices', 'DefaultController');
 Routing::get('settings', 'DefaultController');
 Routing::post('login', 'SecurityController');
+Routing::post('addEvent', 'EventController');
+
 
 Routing::run($path);

@@ -24,5 +24,8 @@ class DefaultController extends AppController {
         $this->render('settings');
     }
 
+    public function addEvent() {
+        $this->render('addEvent');
+    }
 
 }

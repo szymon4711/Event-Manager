@@ -10,7 +10,7 @@ body {
     height: 100vh;
 }
 
-input {
+input, textarea {
     background-color: transparent;
     border: none;
     border-bottom: 1px solid gray;
@@ -23,9 +23,9 @@ input {
 nav {
     width: 20vw;
     height: 100%;
-    background: 
-        linear-gradient(195.61deg, 
-            #7758D1 10.59%, 
+    background:
+        linear-gradient(195.61deg,
+            #7758D1 10.59%,
             rgba(140, 124, 231, 0.72) 40.34%);
 
     display: flex;
@@ -135,7 +135,7 @@ header {
     color: gray;
     margin: 0;
     box-sizing: border-box;
-    
+
 }
 
 
@@ -221,13 +221,24 @@ main {
     display: none;
 }
 
+section.events-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.events-form > form {
+    display: flex;
+    flex-direction: column;
+}
+
 
 
 
 
 
 @media only screen and (max-device-width: 420px) {
-    
+
     .base-container {
         flex-direction: column;
         align-content: flex-start;
@@ -244,7 +255,7 @@ main {
     main {
         height: 70%;
     }
-    
+
     /* ----------- */
     section {
         display: flex;
@@ -254,7 +265,7 @@ main {
 
     .events > div {
 
-        border-radius: 1em;        
+        border-radius: 1em;
         height: 700px;
         font-size: 30px;
         display: flex;
