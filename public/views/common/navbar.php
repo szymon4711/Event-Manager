@@ -1,4 +1,3 @@
-<!-- TODO create common directory and move this file to it-->
 <nav>
     <img src="public/img/logo.svg">
     <ul>

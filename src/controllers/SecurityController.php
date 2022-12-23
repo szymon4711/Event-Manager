@@ -8,7 +8,7 @@ class SecurityController extends AppController
 {
     public function login() {
 
-        $userRepositroy = new UserRepository();
+        $userRepository = new UserRepository();
 
         if (!$this->isPost()) {
             return $this->render('login');
@@ -18,7 +18,7 @@ class SecurityController extends AppController
         $password = $_POST["password"];
 
         try{
-            $user = $userRepositroy->getUser($username);
+            $user = $userRepository->getUser($username);
         } catch (Exception $error) {
             return $this->render('login', ["messages" => [$error]]);
         }
