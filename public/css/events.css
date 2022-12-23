@@ -244,7 +244,7 @@ section.events-form {
     }
 
     nav {
-        height: 20%;
+        height: 12%;
     }
 
     main {
@@ -309,5 +309,9 @@ section.events-form {
         width: 80vw;
         border-radius: 50px;
         font-size: 50px;
+    }
+
+    nav > img {
+        margin-bottom: 0;
     }
 }

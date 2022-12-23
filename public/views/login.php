@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 
 <head>
+    <?php require('public/views/common/head.php'); ?>
     <link rel="stylesheet" type="text/css" href="public/css/login.css">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
-    <script src="https://kit.fontawesome.com/8ca159327f.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="public/img/favicon.png">
     <title>Login page</title>
 </head>
 

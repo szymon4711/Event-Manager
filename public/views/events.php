@@ -1,81 +1,42 @@
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="public/css/events.css">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
-    <script src="https://kit.fontawesome.com/8ca159327f.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="public/img/favicon.png">
+    <?php require('public/views/common/head.php'); ?>
     <title>Events</title>
 </head>
 
 <body>
-    <div class="base-container">
-        <nav>
-            <img src="public/img/logo.svg">
-            <ul>
-                <li>
-                    <i class="fa-regular fa-calendar"></i>
-                    <a href="#" class="button">Events</a>
-                </li>
-                <li>
-                    <i class="fa-regular fa-heart"></i>
-                    <a href="#" class="button">My events</a>
-                </li>
-                <li>
-                    <i class="fa-regular fa-bell"></i>
-                    <a href="#" class="button">Notices</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-gear"></i>
-                    <a href="#" class="button">Settings</a>
-                </li>
-            </ul>
+<div class="base-container">
+    <?php require('public/views/common/navbar.php'); ?>
+    <main>
+        <header>
+            <div class="search-bar">
+                <form>
+                    <input type="text" placeholder="&#xf002;  search event">
+                </form>
+            </div>
 
-            <button class="burger">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </button>
-        </nav>
-        <main>
-            <header>
-                <div class="search-bar">
-                    <form>
-                        <input type="text" placeholder="&#xf002;  search event">
-                    </form>
-                </div>
+            <div class="add-event">
+                <i class="fa-solid fa-plus"></i>
+                add event
+            </div>
+        </header>
 
-                <div class="add-event">
-                    <i class="fa-solid fa-plus"></i>
-                    add event
-                </div>
-            </header>
-
-            <section class="events">
-                <div id="event-1">
-                    <img src="public/uploads/<?= $event->getImage() ?>">
-                    <div>
-                        <h2><?= $event->getTitle() ?></h2>
-                        <p><?= $event->getDescription() ?></p>
-                        <div class="social-section">
-                            <i class="fa-regular fa-circle-check"> 600</i>
-                            <i class="fa-regular fa-circle-question"> 600</i>
-                            <i class="fa-regular fa-circle-xmark"> 600</i>
-                        </div>
+        <section class="events">
+            <div id="event-1">
+                <!-- TODO check if $event exists -->
+                <img src="<?= $event->getImage() ? 'public/uploads/' . $event->getImage() : 'public/img/uploads' ?>">
+                <div>
+                    <h2><?= $event->getTitle() ?></h2>
+                    <p><?= $event->getDescription() ?></p>
+                    <div class="social-section">
+                        <i class="fa-regular fa-circle-check"> 600</i>
+                        <i class="fa-regular fa-circle-question"> 600</i>
+                        <i class="fa-regular fa-circle-xmark"> 600</i>
                     </div>
                 </div>
-            </section>
-        </main>
-    </div>
-
-
-<script>
-    const moblieNav = document.querySelector('ul');
-    const burgerBtn = document.querySelector('.burger');
-
-    burgerBtn.addEventListener('click', function(){
-            moblieNav.classList.toggle('active');
-            burgerBtn.classList.toggle('active');
-    })
-</script>
+            </div>
+        </section>
+    </main>
+</div>
 </body>
