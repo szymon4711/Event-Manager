@@ -2,20 +2,28 @@
 
 require_once 'AppController.php';
 require_once __DIR__.'/../models/User.php';
+require_once __DIR__.'/../repository/UserRepository.php';
 
 class SecurityController extends AppController
 {
     public function login() {
-        $user = new User('sjura', 'haslo', 'Szymon', 'Yura');
+
+        $userRepositroy = new UserRepository();
 
         if (!$this->isPost()) {
             return $this->render('login');
         }
 
-        // TODO zamienic mail z username
         $username = $_POST["username"];
         $password = $_POST["password"];
 
+        try{
+            $user = $userRepositroy->getUser($username);
+        } catch (Exception $error) {
+            return $this->render('login', ["messages" => [$error]]);
+        }
+
+        //TODO validate user function
         if ($user->getUsername() !== $username) {
             return $this->render('login', ['messages' => ['User with this username not exists!']]);
         }
