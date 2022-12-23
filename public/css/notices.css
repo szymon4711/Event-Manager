@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Raleway';
+    font-family: 'Raleway', FontAwesome, cursive;
 }
 
 .base-container {
@@ -49,17 +49,17 @@ li i{
     color: white;
     margin-left: 1em;
     text-align: center;
-    letter-spacing: 0.7px;
+    letter-spacing: 1px;
     padding: 0.2em;
     width: 60%;
-    box-shadow: 0px 3px 6px gray;
+    box-shadow: 0 3px 6px gray;
 }
 
 ul {
     list-style-type: none;
     color: white;
-    font: 'Raleway';
-    letter-spacing: 0.72px;
+    font-family: 'Raleway', FontAwesome, cursive;
+    letter-spacing: 1px;
     height: 100%;
     margin: 0 auto;
     padding: 0;
@@ -101,7 +101,7 @@ header {
 .title-bar {
     background: rgba(0, 0, 0, 0.55);
     border-radius: 20px;
-    box-shadow: 0px 3px 6px gray;
+    box-shadow: 0 3px 6px gray;
     color: white;
     letter-spacing: 0.1em;
     text-align: center;
@@ -142,7 +142,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0px 3px 6px gray;
+    box-shadow: 0 3px 6px gray;
 
 }
 
@@ -231,7 +231,6 @@ main {
         text-align: center;
         width: 100vw;
         right: 0;
-        display: flex;
         justify-content: flex-start;
         gap: 5vh;
         display: none;

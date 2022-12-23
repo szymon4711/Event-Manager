@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Raleway';
+    font-family: 'Raleway', FontAwesome, cursive;
 }
 
 .base-container {
@@ -17,16 +17,15 @@ input, textarea {
     padding: 1em;
     margin: 1em;
     width: 50%;
-    font-family: 'Raleway', FontAwesome;
+    font-family: 'Raleway', FontAwesome, cursive;
 }
 
 nav {
     width: 20vw;
     height: 100%;
-    background:
-        linear-gradient(195.61deg,
-            #7758D1 10.59%,
-            rgba(140, 124, 231, 0.72) 40.34%);
+    background: linear-gradient(195.61deg,
+    #7758D1 10.59%,
+    rgba(140, 124, 231, 0.72) 40.34%);
 
     display: flex;
     flex-direction: column;
@@ -49,7 +48,7 @@ a {
     line-height: 2em;
 }
 
-li i{
+li i {
     font-size: 1.5em;
 }
 
@@ -59,17 +58,17 @@ li i{
     color: white;
     margin-left: 1em;
     text-align: center;
-    letter-spacing: 0.7px;
+    letter-spacing: 1px;
     padding: 0.2em;
     width: 60%;
-    box-shadow: 0px 3px 6px gray;
+    box-shadow: 0 3px 6px gray;
 }
 
 ul {
     list-style-type: none;
     color: white;
-    font: 'Raleway';
-    letter-spacing: 0.72px;
+    font-family: 'Raleway', FontAwesome, cursive;
+    letter-spacing: 1px;
     height: 100%;
     margin: 0 auto;
     padding: 0;
@@ -111,24 +110,24 @@ header {
 .add-event {
     background: rgba(0, 0, 0, 0.55);
     border-radius: 20px;
-    box-shadow: 0px 3px 6px gray;
+    box-shadow: 0 3px 6px gray;
     color: white;
     letter-spacing: 0.1em;
     text-align: center;
     width: 20%;
 }
 
-.add-event{
+.add-event {
     padding: 1em;
 }
 
-.search-bar{
+.search-bar {
     width: 70%;
 }
 
 .search-bar > form > input {
     border-radius: 20px;
-    box-shadow: 0px 3px 6px gray;
+    box-shadow: 0 3px 6px gray;
     color: red;
     width: 100%;
     text-align: center;
@@ -176,7 +175,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0px 3px 6px gray;
+    box-shadow: 0 3px 6px gray;
 }
 
 .fa-circle-check,
@@ -231,10 +230,6 @@ section.events-form {
     display: flex;
     flex-direction: column;
 }
-
-
-
-
 
 
 @media only screen and (max-device-width: 420px) {
@@ -292,14 +287,13 @@ section.events-form {
         text-align: center;
         width: 100vw;
         right: 0;
-        display: flex;
         justify-content: flex-start;
         gap: 5vh;
         display: none;
     }
 
     ul.active {
-        display:flex;
+        display: flex;
 
     }
 
