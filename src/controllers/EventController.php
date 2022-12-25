@@ -40,12 +40,13 @@ class EventController extends AppController
             $event = new Event($_POST['title'], $_POST['description'], $_FILES['file']['name'], $_POST['date']);
             $this->eventRepository->addEvent($event);
 
+            // TODO after uploading the url is still 'addEvent'
             return $this->render('events', [
                 'events' => $this->eventRepository->getEvents(),
                 'messages' => $this->messages, 'event' => $event]);
         }
 
-        $this->render('addEvent', ['messages' => $this->messages]);
+        return $this->render('addEvent', ['messages' => $this->messages]);
     }
 
     private function validate(array $file) : bool

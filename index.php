@@ -1,6 +1,8 @@
 <?php
 
 require 'Routing.php';
+session_start();
+//session_destroy();
 
 $path = trim($_SERVER['REQUEST_URI'], '/');
 $path = parse_url($path, PHP_URL_PATH);

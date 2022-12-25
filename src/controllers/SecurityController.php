@@ -23,16 +23,11 @@ class SecurityController extends AppController
             return $this->render('login', ["messages" => [$error->getMessage()]]);
         }
 
-        //TODO validate user function
-        if ($user->getUsername() !== $username) {
-            return $this->render('login', ['messages' => ['User with this username not exists!']]);
-        }
-
         if ($user->getPassword() !== $password) {
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
 
-        //return $this->render('events');
+        $_SESSION['user_id'] = $userRepository->getId();
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/events");

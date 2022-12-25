@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+<?php require('public/views/common/session_validator.php') ?>
+
 <head>
     <?php require('public/views/common/head.php'); ?>
     <link rel="stylesheet" type="text/css" href="public/css/notices.css">

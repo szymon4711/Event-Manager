@@ -17,6 +17,10 @@
             <i class="fa-solid fa-gear"></i>
             <a href="#" class="button">Settings</a>
         </li>
+        <li>
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <a href="#" class="button">Logout</a>
+        </li>
     </ul>
 
     <button class="burger">

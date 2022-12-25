@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+<?php require('public/views/common/session_validator.php') ?>
+
 <head>
     <?php require('public/views/common/head.php'); ?>
     <title>Events</title>
@@ -24,19 +26,20 @@
 
         <section class="events">
             <?php foreach ($events as $event): ?>
-            <div id="event-1">
-                <img src="<?='public/uploads/'.$event->getImage() ?>" onerror=this.src="public/img/uploads/default.svg">
-                <div>
-                    <p><?= $event->getDate() ?></p>
-                    <h2><?= $event->getTitle() ?></h2>
-                    <p><?= $event->getDescription() ?></p>
-                    <div class="social-section">
-                        <i class="fa-regular fa-circle-check"> 600</i>
-                        <i class="fa-regular fa-circle-question"> 600</i>
-                        <i class="fa-regular fa-circle-xmark"> 600</i>
+                <div id="event-1">
+                    <img src="<?= 'public/uploads/' . $event->getImage() ?>"
+                         onerror=this.src="public/img/uploads/default.svg">
+                    <div>
+                        <p><?= $event->getDate() ?></p>
+                        <h2><?= $event->getTitle() ?></h2>
+                        <p><?= $event->getDescription() ?></p>
+                        <div class="social-section">
+                            <i class="fa-regular fa-circle-check"> 600</i>
+                            <i class="fa-regular fa-circle-question"> 600</i>
+                            <i class="fa-regular fa-circle-xmark"> 600</i>
+                        </div>
                     </div>
                 </div>
-            </div>
             <?php endforeach; ?>
         </section>
     </main>

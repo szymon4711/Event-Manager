@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+<?php require('public/views/common/session_validator.php') ?>
+
 <head>
     <?php require('public/views/common/head.php'); ?>
     <title>My Events</title>

@@ -4,6 +4,7 @@ require_once 'Repository.php';
 require_once __DIR__.'/../models/User.php';
 class UserRepository extends Repository
 {
+    private $id;
     /**
      * @throws Exception
      */
@@ -21,11 +22,17 @@ class UserRepository extends Repository
             throw new Exception("User not found");
         }
 
+        $this->id = $user['id'];
+
         return new User(
             $user['username'],
             $user['password'],
             $user['name'],
             $user['surname']
         );
+    }
+
+    public function getId() {
+        return $this->id;
     }
 }

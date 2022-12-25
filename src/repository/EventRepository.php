@@ -38,7 +38,7 @@ class EventRepository extends Repository
         $stmt->execute([
             $event->getTitle(),
             $event->getDescription(),
-            1, // TODO get id from the session
+            $_SESSION['user_id'],
             $event->getDate(),
             $event->getImage()
         ]);
