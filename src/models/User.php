@@ -6,6 +6,17 @@ class User
     private $password;
     private $name;
     private $surname;
+    private $email;
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function setEmail($email): void
+    {
+        $this->email = $email;
+    }
 
     public function __construct(string $username, string $password, string $name, string $surname)
     {

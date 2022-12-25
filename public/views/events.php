@@ -25,7 +25,8 @@
         </header>
 
         <section class="events">
-            <?php foreach ($events as $event): ?>
+            <?php if (isset($events))
+                foreach ($events as $event): ?>
                 <div id="event-1">
                     <img src="<?= 'public/uploads/' . $event->getImage() ?>"
                          onerror=this.src="public/img/uploads/default.svg">

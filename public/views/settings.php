@@ -27,9 +27,9 @@
                     <input name="username" type="text" placeholder="&#xf507;   username">
                     <input name="email" type="email" placeholder="&#xf0e0;   email">
                     <input name="password" type="password" placeholder="&#xf023;   password">
-                    <input name="re-password" type="password" placeholder="&#xf023;   re-enter password">
+                    <input name="confirmedPassword" type="password" placeholder="&#xf023;   re-enter password">
                     <p></p>
-                    <button class="loginButton">
+                    <button class="loginButton" type="submit">
                         <i class="fa-solid fa-arrow-right-to-bracket"></i> &nbsp; Save
                     </button>
                 </form>

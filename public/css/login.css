@@ -30,7 +30,7 @@ body {
 
 }
 
-form.login {
+form.login, form.register {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -42,6 +42,11 @@ form.login {
     background: rgba(255, 255, 255, 0.7);
     border-radius: 75px
 }
+
+form.register {
+    height: fit-content;
+}
+
 
 .loginButton {
     width: 50%;
@@ -83,6 +88,13 @@ input {
     margin: 3em 1em 1em 0;
 }
 
+.no-valid {
+    border: 3px solid red;
+    border-radius: 1em;
+    box-shadow: 0 0 0.2em red;
+    outline: none;
+}
+
 /* ---------------------------*/
 
 
@@ -114,9 +126,13 @@ input {
         width: 30vw;
     }
 
-    form.login {
+    form.login, form.register{
         margin: auto;
         height: 50vh;
+    }
+
+    form.register {
+        height: fit-content;
     }
 
     img {
