@@ -5,14 +5,25 @@ class Event
     private $title;
     private $description;
     private $image;
+    private $date;
 
-    public function __construct($title, $description, $image)
+    public function __construct($title, $description, $image, $date)
     {
         $this->title = $title;
         $this->description = $description;
         $this->image = $image;
+        $this->date = $date;
     }
 
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    public function setDate($date): void
+    {
+        $this->date = $date;
+    }
 
     public function getTitle()
     {

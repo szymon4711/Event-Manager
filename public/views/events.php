@@ -23,10 +23,11 @@
         </header>
 
         <section class="events">
+            <?php foreach ($events as $event): ?>
             <div id="event-1">
-                <!-- TODO check if $event exists -->
-                <img src="<?= $event->getImage() ? 'public/uploads/' . $event->getImage() : 'public/img/uploads' ?>">
+                <img src="<?='public/uploads/'.$event->getImage() ?>" onerror=this.src="public/img/uploads/default.svg">
                 <div>
+                    <p><?= $event->getDate() ?></p>
                     <h2><?= $event->getTitle() ?></h2>
                     <p><?= $event->getDescription() ?></p>
                     <div class="social-section">
@@ -36,6 +37,7 @@
                     </div>
                 </div>
             </div>
+            <?php endforeach; ?>
         </section>
     </main>
 </div>

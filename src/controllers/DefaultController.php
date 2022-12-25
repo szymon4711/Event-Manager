@@ -8,10 +8,6 @@ class DefaultController extends AppController {
         $this->render('login');
     }
 
-    public function events() {
-        $this->render('events');
-    }
-
     public function myEvents() {
         $this->render('myEvents');
     }

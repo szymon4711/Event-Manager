@@ -20,7 +20,7 @@ class SecurityController extends AppController
         try{
             $user = $userRepository->getUser($username);
         } catch (Exception $error) {
-            return $this->render('login', ["messages" => [$error]]);
+            return $this->render('login', ["messages" => [$error->getMessage()]]);
         }
 
         //TODO validate user function

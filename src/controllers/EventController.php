@@ -2,6 +2,7 @@
 
 require_once 'AppController.php';
 require_once __DIR__.'/../models/Event.php';
+require_once __DIR__.'/../repository/EventRepository.php';
 
 
 class EventController extends AppController
@@ -11,6 +12,21 @@ class EventController extends AppController
     const UPLOAD_DIRECTORY = '/../public/uploads/';
 
     private $messages = [];
+    private $eventRepository;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->eventRepository = new EventRepository();
+    }
+
+    /**
+     * @throws Exception
+     */
+    public function events() {
+        $events = $this->eventRepository->getEvents();
+        $this->render('events', ['events' => $events]);
+    }
 
     public function addEvent() {
         if ($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])) {
@@ -20,9 +36,13 @@ class EventController extends AppController
                 dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['file']['name']
             );
 
-            $event = new Event($_POST['title'], $_POST['description'], $_FILES['file']['name']);
 
-            return $this->render('events', ['messages' => $this->messages, 'event' => $event]);
+            $event = new Event($_POST['title'], $_POST['description'], $_FILES['file']['name'], $_POST['date']);
+            $this->eventRepository->addEvent($event);
+
+            return $this->render('events', [
+                'events' => $this->eventRepository->getEvents(),
+                'messages' => $this->messages, 'event' => $event]);
         }
 
         $this->render('addEvent', ['messages' => $this->messages]);

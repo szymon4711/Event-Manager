@@ -8,10 +8,11 @@ class UserRepository extends Repository
      * @throws Exception
      */
     public function getUser(string $username): ?User {
-        $stmt = $this->database->connect()->prepare('
-            SELECT * FROM public.users WHERE username = :username
-        ');
-        $stmt->bindParam(':username', $username, PDO::PARAM_STMT);
+        $stmt = $this->database->connect()->prepare(
+            'SELECT * FROM public.users u LEFT JOIN user_details ud
+                   ON u.id_user_details = ud.id WHERE username = :username'
+        );
+        $stmt->bindParam(':username', $username, PDO::PARAM_STR);
         $stmt->execute();
 
         $user = $stmt->fetch(PDO::FETCH_ASSOC);

@@ -24,7 +24,7 @@
 
             <section class="events">
                 <div id="event-1">
-                    <img src="public/img/uploads/zdj.svg">
+                    <img src="public/img/uploads/default.svg">
                     <div>
                         <h2>Title</h2>
                         <p>description</p>
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div id="event-2">
-                    <img src="public/img/uploads/zdj.svg">
+                    <img src="public/img/uploads/default.svg">
                     <div>
                         <h2>Title</h2>
                         <p>description</p>
@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div id="event-3">
-                    <img src="public/img/uploads/zdj.svg">
+                    <img src="public/img/uploads/default.svg">
                     <div>
                         <h2>Title</h2>
                         <p>description</p>
@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <div id="event-4">
-                    <img src="public/img/uploads/zdj.svg">
+                    <img src="public/img/uploads/default.svg">
                     <div>
                         <h2>Title</h2>
                         <p>description</p>
