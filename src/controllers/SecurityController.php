@@ -13,6 +13,11 @@ class SecurityController extends AppController
         $this->userRepository = new UserRepository();
     }
 
+    public function logout() {
+        session_destroy();
+        return $this->render('login', ['messages' => ['You have been logged out successfully']]);
+    }
+
     public function login() {
 
         if (!$this->isPost()) {

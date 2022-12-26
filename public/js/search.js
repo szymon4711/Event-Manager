@@ -1,7 +1,7 @@
 const search = document.querySelector('.search');
 const projectContainer = document.querySelector(".events");
 search.addEventListener("keyup", function (event) {
-    if (event.key === "Enter") {
+
         event.preventDefault();
         const data = {search: this.value};
         fetch("/search", {
@@ -16,7 +16,7 @@ search.addEventListener("keyup", function (event) {
             projectContainer.innerHTML = "";
             loadProjects(events)
         });
-    }
+
 });
 function loadProjects(events) {
     events.forEach(event => {

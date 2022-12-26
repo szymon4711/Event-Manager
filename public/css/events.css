@@ -48,6 +48,11 @@ a {
     line-height: 2em;
 }
 
+header .add-event a {
+    color: white;
+    line-height: normal;
+}
+
 li i {
     font-size: 1.5em;
 }
@@ -92,6 +97,10 @@ li:last-child {
 .fas {
     font-weight: 900;
     width: 1em;
+}
+
+.fa-circle-check:before, .fa-circle-xmark:before, .fa-circle-question:before {
+    margin-right: 7px;
 }
 
 main {

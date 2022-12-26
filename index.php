@@ -13,8 +13,12 @@ Routing::get('myEvents', 'DefaultController');
 Routing::get('notices', 'DefaultController');
 Routing::get('settings', 'DefaultController');
 Routing::post('login', 'SecurityController');
+Routing::post('logout', 'SecurityController');
 Routing::post('addEvent', 'EventController');
 Routing::post('register', 'SecurityController');
 Routing::post('search', 'EventController');
+Routing::get('like', 'EventController');
+Routing::get('dislike', 'EventController');
+Routing::get('uncertain', 'EventController');
 
 Routing::run($path);

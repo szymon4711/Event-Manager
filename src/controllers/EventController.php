@@ -65,6 +65,24 @@ class EventController extends AppController
         return $this->render('addEvent', ['messages' => $this->messages]);
     }
 
+    public function like(int $id) {
+        require('public/views/common/session_validator.php');
+        $this->eventRepository->like($id);
+        http_response_code(200);
+    }
+
+    public function dislike(int $id) {
+        require('public/views/common/session_validator.php');
+        $this->eventRepository->dislike($id);
+        http_response_code(200);
+    }
+
+    public function uncertain(int $id) {
+        require('public/views/common/session_validator.php');
+        $this->eventRepository->uncertain($id);
+        http_response_code(200);
+    }
+
     private function validate(array $file) : bool
     {
         if ($file['size'] > self::MAX_FILE_SIZE) {
