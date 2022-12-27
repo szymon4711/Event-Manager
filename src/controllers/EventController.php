@@ -36,6 +36,19 @@ class EventController extends AppController
         }
     }
 
+    public function checkEvents()
+    {
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+
+        if ($contentType === "application/json") {
+
+            header('Content-type: application/json');
+            http_response_code(200);
+
+            echo json_encode($this->eventRepository->getUsersEvents());
+        }
+    }
+
     /**
      * @throws Exception
      */

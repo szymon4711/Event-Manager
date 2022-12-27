@@ -21,4 +21,6 @@ Routing::get('like', 'EventController');
 Routing::get('dislike', 'EventController');
 Routing::get('uncertain', 'EventController');
 
+Routing::post('checkEvents', 'EventController');
+
 Routing::run($path);
