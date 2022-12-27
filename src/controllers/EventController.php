@@ -49,9 +49,6 @@ class EventController extends AppController
         }
     }
 
-    /**
-     * @throws Exception
-     */
     public function events() {
         $events = $this->eventRepository->getEvents();
         $this->render('events', ['events' => $events]);
@@ -62,10 +59,8 @@ class EventController extends AppController
         $this->render('myEvents', ['events' => $events]);
     }
 
-    public function notices() {
-        $events = $this->eventRepository->getNotifications();
-        $this->render('notices', ['events' => $events]);
-    }
+
+
 
     public function addEvent() {
         if ($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])) {

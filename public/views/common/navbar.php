@@ -18,6 +18,10 @@
             <a href="settings" class="button">Settings</a>
         </li>
         <li>
+            <i class="fa-solid fa-user-group"></i>
+            <a href="friends" class="button">Friends</a>
+        </li>
+        <li>
             <i class="fa-solid fa-arrow-right-from-bracket"></i>
             <a href="logout" class="button">Logout</a>
         </li>
@@ -29,3 +33,10 @@
         <div class="line"></div>
     </button>
 </nav>
+
+<style>
+    .fa-solid, .fa-regular {
+        width: 25px;
+        height: 25px;
+    }
+</style>
