@@ -12,67 +12,31 @@
         <?php require('public/views/common/navbar.php'); ?>
         <main>
             <header>
-                <div class="search-bar">
-                    <form>
-                        <input type="text" placeholder="&#xf002;  search event">
-                    </form>
-                </div>
-
-                <div class="add-event">
-                    <i class="fa-solid fa-plus"></i>
-                    add event
+                <div class="title-bar">
+                    <i class="fa-regular fa-heart"></i>
+                    MY EVENTS
                 </div>
             </header>
 
             <section class="events">
-                <div id="event-1">
-                    <img src="public/img/uploads/default.svg">
-                    <div>
-                        <h2>Title</h2>
-                        <p>description</p>
-                        <div class="social-section">
-                            <i class="fa-regular fa-circle-check"> 600</i>
-                            <i class="fa-regular fa-circle-question"> 600</i>
-                            <i class="fa-regular fa-circle-xmark"> 600</i>
+                <?php if (isset($events))
+                    foreach ($events as $event): ?>
+
+                        <div id="<?= $event->getId() ?>">
+                            <img src="<?= 'public/uploads/' . $event->getImage() ?>"
+                                 onerror=this.src="public/img/uploads/default.svg">
+                            <div>
+                                <p class="date"><?= $event->getDate() ?></p>
+                                <h2><?= $event->getTitle() ?></h2>
+                                <p class="description"><?= $event->getDescription() ?></p>
+                                <div class="social-section">
+                                    <i class="fa-regular fa-circle-check"><?= $event->getLike() ?></i>
+                                    <i class="fa-regular fa-circle-question"><?= $event->getUncertain() ?></i>
+                                    <i class="fa-regular fa-circle-xmark"><?= $event->getDislike() ?></i>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div id="event-2">
-                    <img src="public/img/uploads/default.svg">
-                    <div>
-                        <h2>Title</h2>
-                        <p>description</p>
-                        <div class="social-section">
-                            <i class="fa-regular fa-circle-check"> 600</i>
-                            <i class="fa-regular fa-circle-question"> 600</i>
-                            <i class="fa-regular fa-circle-xmark"> 600</i>
-                        </div>
-                    </div>
-                </div>
-                <div id="event-3">
-                    <img src="public/img/uploads/default.svg">
-                    <div>
-                        <h2>Title</h2>
-                        <p>description</p>
-                        <div class="social-section">
-                            <i class="fa-regular fa-circle-check"> 600</i>
-                            <i class="fa-regular fa-circle-question"> 600</i>
-                            <i class="fa-regular fa-circle-xmark"> 600</i>
-                        </div>
-                    </div>
-                </div>
-                <div id="event-4">
-                    <img src="public/img/uploads/default.svg">
-                    <div>
-                        <h2>Title</h2>
-                        <p>description</p>
-                        <div class="social-section">
-                            <i class="fa-regular fa-circle-check"> 600</i>
-                            <i class="fa-regular fa-circle-question"> 600</i>
-                            <i class="fa-regular fa-circle-xmark"> 600</i>
-                        </div>
-                    </div>
-                </div>
+                    <?php endforeach; ?>
             </section>
         </main>
     </div>

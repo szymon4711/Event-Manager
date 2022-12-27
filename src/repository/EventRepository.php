@@ -26,23 +26,18 @@ class EventRepository extends Repository
         $stmt = $this->database->connect()->prepare(
             'SELECT * FROM events ORDER BY date'
         );
-        $stmt->execute();
-        $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $this->evecuteDisplayEvents($stmt, $result);
+    }
 
-        foreach ($events as $event) {
-            $result[] = new Event(
-              $event['title'],
-              $event['description'],
-              $event['image'],
-              $event['date'],
-              $event['like'],
-              $event['dislike'],
-              $event['uncertain'],
-              $event['id']
-            );
-        }
+    public function getMyEvents(): array
+    {
+        $result = [];
+        $stmt = $this->database->connect()->prepare(
+            'SELECT * FROM events WHERE id_assigned_by = :id OR id = (SELECT id_event FROM users_events where id_user = :id AND flag = true) ORDER BY date'
+        );
+        $stmt->bindParam(':id', $_SESSION['user_id'], PDO::PARAM_INT);
 
-        return $result;
+        return $this->evecuteDisplayEvents($stmt, $result);
     }
 
     public function getEventByTitle(string $searchString)
@@ -104,5 +99,26 @@ class EventRepository extends Repository
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->bindValue(':user_id', $_SESSION['user_id'], PDO::PARAM_INT);
         $stmt->execute();
+    }
+
+    private function evecuteDisplayEvents(false|PDOStatement $stmt, array $result): array
+    {
+        $stmt->execute();
+        $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($events as $event) {
+            $result[] = new Event(
+                $event['title'],
+                $event['description'],
+                $event['image'],
+                $event['date'],
+                $event['like'],
+                $event['dislike'],
+                $event['uncertain'],
+                $event['id']
+            );
+        }
+
+        return $result;
     }
 }

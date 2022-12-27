@@ -57,6 +57,11 @@ class EventController extends AppController
         $this->render('events', ['events' => $events]);
     }
 
+    public function myEvents() {
+        $events = $this->eventRepository->getMyEvents();
+        $this->render('myEvents', ['events' => $events]);
+    }
+
     public function addEvent() {
         if ($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])) {
 

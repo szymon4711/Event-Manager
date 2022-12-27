@@ -37,6 +37,17 @@ main {
     width: 80vw;
 }
 
+.title-bar {
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 20px;
+    box-shadow: 0 3px 6px gray;
+    color: white;
+    letter-spacing: 0.1em;
+    text-align: center;
+    width: 100%;
+    padding: 1em;
+}
+
 nav > img {
     width: 60%;
     margin: 2em auto;
