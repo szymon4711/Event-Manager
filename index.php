@@ -10,7 +10,7 @@ $path = parse_url($path, PHP_URL_PATH);
 Routing::get('', 'DefaultController');
 Routing::get('events', 'EventController');
 Routing::get('myEvents', 'EventController');
-Routing::get('notices', 'DefaultController');
+Routing::get('notices', 'EventController');
 Routing::post('settings', 'SecurityController');
 Routing::post('login', 'SecurityController');
 Routing::post('logout', 'SecurityController');

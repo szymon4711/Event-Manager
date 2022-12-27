@@ -26,7 +26,7 @@ class EventRepository extends Repository
         $stmt = $this->database->connect()->prepare(
             'SELECT * FROM events ORDER BY date'
         );
-        return $this->evecuteDisplayEvents($stmt, $result);
+        return $this->executeDisplayEvents($stmt, $result);
     }
 
     public function getMyEvents(): array
@@ -37,7 +37,19 @@ class EventRepository extends Repository
         );
         $stmt->bindParam(':id', $_SESSION['user_id'], PDO::PARAM_INT);
 
-        return $this->evecuteDisplayEvents($stmt, $result);
+        return $this->executeDisplayEvents($stmt, $result);
+    }
+
+    public function getNotifications() {
+        $result = [];
+        $stmt = $this->database->connect()->prepare(
+            'SELECT * FROM events WHERE (id_assigned_by = :id OR id = (SELECT id_event FROM users_events where id_user = :id AND flag = true))
+                       AND date_part(\'day\', age(date, current_date)) < 7 ORDER BY date;
+'
+        );
+        $stmt->bindParam(':id', $_SESSION['user_id'], PDO::PARAM_INT);
+
+        return $this->executeDisplayEvents($stmt, $result);
     }
 
     public function getEventByTitle(string $searchString)
@@ -101,7 +113,7 @@ class EventRepository extends Repository
         $stmt->execute();
     }
 
-    private function evecuteDisplayEvents(false|PDOStatement $stmt, array $result): array
+    private function executeDisplayEvents(false|PDOStatement $stmt, array $result): array
     {
         $stmt->execute();
         $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
