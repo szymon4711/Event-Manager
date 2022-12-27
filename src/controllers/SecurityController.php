@@ -71,4 +71,32 @@ class SecurityController extends AppController
 
         return $this->render('login', ['messages' => ['You\'ve been successfully registered!']]);
     }
+
+    public function settings()
+    {
+        if (!$this->isPost()) {
+            return $this->render('settings');
+        }
+
+        $name = $_POST['name'];
+        $surname = $_POST['surname'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $confirmedPassword = $_POST['confirmedPassword'];
+        $email = $_POST['email'];
+
+        if ($password !== $confirmedPassword) {
+            return $this->render('settings');
+        }
+
+        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+        if (password_needs_rehash($hashedPassword, PASSWORD_BCRYPT))
+            $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+
+        $user = new User($username, $hashedPassword, $name, $surname);
+        $user->setEmail($email);
+
+        $this->userRepository->updateUser($user);
+
+        return $this->render('settings');    }
 }

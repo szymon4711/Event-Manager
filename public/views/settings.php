@@ -21,7 +21,7 @@
 
         <section class="settings">
             <div class="login-container">
-                <form class="login">
+                <form class="login" action="settings" method="POST">
                     <input name="name" type="text" placeholder="&#xf007;   name">
                     <input name="surname" type="text" placeholder="&#xf5b7;   surname">
                     <input name="username" type="text" placeholder="&#xf507;   username">
