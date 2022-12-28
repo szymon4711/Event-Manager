@@ -2,6 +2,10 @@
     <img src="public/img/logo.svg">
     <ul>
         <li>
+            <i class="fa-regular fa-user"></i>
+            <a class="button"><?=$_SESSION['user_details']?></a>
+        </li>
+        <li>
             <i class="fa-regular fa-calendar"></i>
             <a href="events" class="button">Events</a>
         </li>
@@ -35,7 +39,7 @@
 </nav>
 
 <style>
-    .fa-solid, .fa-regular {
+    li > .fa-solid, li > .fa-regular {
         width: 25px;
         height: 25px;
     }

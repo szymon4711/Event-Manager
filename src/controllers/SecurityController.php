@@ -38,6 +38,7 @@ class SecurityController extends AppController
         }
 
         $_SESSION['user_id'] = $this->userRepository->getId();
+        $_SESSION['user_details'] = $user->getName().' '.$user->getSurname();
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/events");
