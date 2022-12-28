@@ -13,10 +13,19 @@
     <?php require('public/views/common/navbar.php'); ?>
     <main>
         <header>
-            <div class="title-bar">
-                <i class="fa-regular fa-bell"></i>
-                FRIENDS
-            </div>
+            <form action="addFriends" method="POST">
+                <div class="search-bar">
+                    <input name="friend" class="search" type="text" placeholder="&#xf234;  add a friend">
+                </div>
+                <button type="submit" class="add-event">
+                    <i class="fa-solid fa-user-plus"></i>
+                    Add
+                </button>
+                <div class="add-event">
+                    <?= $_SESSION['user_uuid'] ?>
+                </div>
+            </form>
+
         </header>
 
         <section class="notifications">
@@ -24,9 +33,10 @@
                 foreach ($friends as $friend): ?>
                     <div>
                         <div>
-                            <h3><?=$friend->getName().' '.$friend->getSurname() ?></h3>
-                            <p>Your friend will be at the same event as you! Event title - '<span style="font-weight: bold"><?=$friend->getTitle() ?></span>'
-                                <span style="float: right"><?=$friend->getDate()?></span>
+                            <h3><?= $friend->getName() . ' ' . $friend->getSurname() ?></h3>
+                            <p>Your friend will be at the same event as you! Event title - '<span
+                                        style="font-weight: bold"><?= $friend->getTitle() ?></span>'
+                                <span style="float: right"><?= $friend->getDate() ?></span>
                             </p>
                         </div>
                     </div>

@@ -3,7 +3,9 @@
     <ul>
         <li>
             <i class="fa-regular fa-user"></i>
-            <a class="button"><?=$_SESSION['user_details']?></a>
+            <a class="button">
+                <?=$_SESSION['user_details']?>
+            </a>
         </li>
         <li>
             <i class="fa-regular fa-calendar"></i>
@@ -18,12 +20,12 @@
             <a href="notices" class="button">Notices</a>
         </li>
         <li>
-            <i class="fa-solid fa-gear"></i>
-            <a href="settings" class="button">Settings</a>
-        </li>
-        <li>
             <i class="fa-solid fa-user-group"></i>
             <a href="friends" class="button">Friends</a>
+        </li>
+        <li>
+            <i class="fa-solid fa-gear"></i>
+            <a href="settings" class="button">Settings</a>
         </li>
         <li>
             <i class="fa-solid fa-arrow-right-from-bracket"></i>
@@ -44,3 +46,4 @@
         height: 25px;
     }
 </style>
+

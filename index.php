@@ -19,6 +19,7 @@ Routing::post('register', 'SecurityController');
 Routing::post('search', 'EventController');
 Routing::post('checkEvents', 'EventController');
 Routing::post('friends', 'FriendNotificationController');
+Routing::post('addFriends', 'FriendNotificationController');
 Routing::get('like', 'EventController');
 Routing::get('dislike', 'EventController');
 Routing::get('uncertain', 'EventController');

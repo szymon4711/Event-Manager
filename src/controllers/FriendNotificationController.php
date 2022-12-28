@@ -24,4 +24,9 @@ class FriendNotificationController extends AppController
         $friends = $this->friendNotificationRepository->getFriends();
         $this->render('friends', ['friends' => $friends]);
     }
+
+    public function addFriends(){
+        $this->friendNotificationRepository->addFriends($_POST['friend']);
+        $this->friends();
+    }
 }

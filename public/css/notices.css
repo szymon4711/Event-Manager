@@ -10,6 +10,12 @@ body {
     height: 100vh;
 }
 
+form{
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+}
+
 nav {
     width: 20vw;
     height: 100%;
@@ -91,11 +97,34 @@ main {
     height: 100vh;
 }
 
+.loginButton {
+
+    border: none;
+    color: white;
+    line-height: 3em;
+    margin: 3em 1em 1em;
+
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 35px;
+    font-family: 'Raleway', FontAwesome, cursive;
+    box-shadow: 0 3px 6px gray;
+    justify-self: center;
+}
+
+.search-bar {
+    width: 30%;
+}
+
 header {
     display: flex;
     justify-content: space-between;
     padding: 1em 2em;
     border-bottom: 1px solid gray;
+}
+
+.add-event{
+    width: 30%;
+    font-size: 11px;
 }
 
 .title-bar {
