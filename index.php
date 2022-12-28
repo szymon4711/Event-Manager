@@ -18,6 +18,8 @@ Routing::post('addEvent', 'EventController');
 Routing::post('register', 'SecurityController');
 Routing::post('search', 'EventController');
 Routing::post('checkEvents', 'EventController');
+Routing::post('admin', 'EventController');
+Routing::post('deleteEvent', 'EventController');
 Routing::post('friends', 'FriendNotificationController');
 Routing::post('addFriends', 'FriendNotificationController');
 Routing::get('like', 'EventController');

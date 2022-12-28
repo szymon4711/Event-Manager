@@ -103,5 +103,11 @@ class EventRepository extends Repository
         $stmt->execute();
     }
 
-
+    public function deleteEvent(int $id)
+    {
+        $stmt = $this->database->connect()->prepare(
+            'DELETE FROM events WHERE id = :id');
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+    }
 }

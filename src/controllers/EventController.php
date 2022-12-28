@@ -101,6 +101,17 @@ class EventController extends AppController
         http_response_code(200);
     }
 
+
+
+    public function admin(){
+        $this->render('admin');
+    }
+
+    public function deleteEvent() {
+        $this->eventRepository->deleteEvent($_POST['id']);
+        $this->admin();
+    }
+
     private function validate(array $file) : bool
     {
         if ($file['size'] > self::MAX_FILE_SIZE) {
@@ -115,6 +126,4 @@ class EventController extends AppController
 
         return true;
     }
-
-
 }

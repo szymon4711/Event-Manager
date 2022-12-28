@@ -27,6 +27,12 @@
             <i class="fa-solid fa-gear"></i>
             <a href="settings" class="button">Settings</a>
         </li>
+        <?php if ($_SESSION['admin']) { ?>
+            <li>
+                <i class="fa-solid fa-lock"></i>
+                <a href="admin" class="button">Admin</a>
+            </li>
+        <?php } ?>
         <li>
             <i class="fa-solid fa-arrow-right-from-bracket"></i>
             <a href="logout" class="button">Logout</a>

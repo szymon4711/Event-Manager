@@ -28,6 +28,7 @@ class UserRepository extends Repository
         $this->id = $user['id'];
 
         $_SESSION['user_uuid'] = $user['uuid'];
+        $_SESSION['admin'] = $user['admin'];
 
         return new User(
             $user['username'],
