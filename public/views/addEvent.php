@@ -39,6 +39,7 @@
 
                 <input type="text" name="title" placeholder="title">
                 <textarea name="description" rows="5" placeholder="description"></textarea>
+                <input type="text" name="location" placeholder="location">
                 <input type="file" name="file">
                 <input type="date" name="date">
                 <button class="add-event" type="submit">Send</button>

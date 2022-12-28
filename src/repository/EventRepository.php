@@ -8,8 +8,8 @@ class EventRepository extends Repository
     public function addEvent(Event $event): void
     {
         $stmt = $this->database->connect()->prepare(
-            'INSERT INTO events (title, description, id_assigned_by, date, image)  
-                    VALUES (?, ?, ?, ?, ?)'
+            'INSERT INTO events (title, description, id_assigned_by, date, image, location)  
+                    VALUES (?, ?, ?, ?, ?, ?)'
         );
 
         $stmt->execute([
@@ -17,7 +17,8 @@ class EventRepository extends Repository
             $event->getDescription(),
             $_SESSION['user_id'],
             $event->getDate(),
-            $event->getImage()
+            $event->getImage(),
+            $event->getLocation()
         ]);
     }
 

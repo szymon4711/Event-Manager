@@ -10,17 +10,29 @@ class Event
     private $dislike;
     private $uncertain;
     private $id;
+    private $location;
 
-    public function __construct($title, $description, $image, $date, $like = 0, $dislike = 0, $uncertain = 0, $id = null)
+    public function __construct($title, $description, $image, $date, $location, $like = 0, $dislike = 0, $uncertain = 0, $id = null)
     {
         $this->title = $title;
         $this->description = $description;
         $this->image = $image;
         $this->date = $date;
+        $this->location = $location;
         $this->like = $like;
         $this->dislike = $dislike;
         $this->uncertain = $uncertain;
         $this->id = $id;
+    }
+
+    public function getLocation()
+    {
+        return $this->location;
+    }
+
+    public function setLocation($location): void
+    {
+        $this->location = $location;
     }
 
 

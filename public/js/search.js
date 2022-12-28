@@ -35,7 +35,7 @@ function createProject(event) {
     else
         image.src = 'public/img/uploads/default.svg';
     const date = clone.querySelector(".date");
-    date.innerHTML = event.date;
+    date.innerHTML = event.date + ' ' + event.location;
     const title = clone.querySelector("h2");
     title.innerHTML = event.title;
     const description = clone.querySelector(".description");

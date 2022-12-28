@@ -22,6 +22,7 @@ class Repository
                 $event['description'],
                 $event['image'],
                 $event['date'],
+                $event['location'],
                 $event['like'],
                 $event['dislike'],
                 $event['uncertain'],

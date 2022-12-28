@@ -71,7 +71,7 @@ class EventController extends AppController
             );
 
 
-            $event = new Event($_POST['title'], $_POST['description'], $_FILES['file']['name'], $_POST['date']);
+            $event = new Event($_POST['title'], $_POST['description'], $_FILES['file']['name'], $_POST['date'], $_POST['location']);
             $this->eventRepository->addEvent($event);
 
             // TODO after uploading the url is still 'addEvent'
