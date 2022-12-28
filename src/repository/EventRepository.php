@@ -1,7 +1,8 @@
 <?php
 
 require_once 'Repository.php';
-require_once __DIR__.'/../models/Event.php';
+require_once __DIR__ . '/../models/Event.php';
+
 class EventRepository extends Repository
 {
     public function addEvent(Event $event): void
@@ -41,7 +42,6 @@ class EventRepository extends Repository
     }
 
 
-
     public function getEventByTitle(string $searchString)
     {
         $searchString = '%' . strtolower($searchString) . '%';
@@ -52,7 +52,8 @@ class EventRepository extends Repository
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getUsersEvents() {
+    public function getUsersEvents()
+    {
         $stmt = $this->database->connect()->prepare(
             'SELECT id_event FROM users_events WHERE id_user = :user_id'
         );
@@ -61,7 +62,8 @@ class EventRepository extends Repository
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function like(int $id) {
+    public function like(int $id)
+    {
         $stmt = $this->database->connect()->prepare(
             'UPDATE events SET "like" = "like" + 1 WHERE id = :id');
 
@@ -75,7 +77,8 @@ class EventRepository extends Repository
         $stmt->execute();
     }
 
-    public function dislike(int $id) {
+    public function dislike(int $id)
+    {
         $stmt = $this->database->connect()->prepare(
             'UPDATE events SET dislike = dislike + 1 WHERE id = :id');
 
@@ -89,7 +92,8 @@ class EventRepository extends Repository
         $stmt->execute();
     }
 
-    public function uncertain(int $id) {
+    public function uncertain(int $id)
+    {
         $stmt = $this->database->connect()->prepare(
             'UPDATE events SET uncertain = uncertain + 1 WHERE id = :id');
 

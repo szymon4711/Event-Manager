@@ -64,6 +64,10 @@ section {
     border-radius: 10px;
 }
 
+.social-section i {
+    cursor: pointer;
+}
+
 .fa-circle-check {
     background-color: greenyellow;
 }

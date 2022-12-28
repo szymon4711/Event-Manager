@@ -96,7 +96,9 @@ li:last-child {
     width: 1em;
 }
 
-.fa-circle-check:before, .fa-circle-xmark:before, .fa-circle-question:before {
+.fa-circle-check:before,
+.fa-circle-xmark:before,
+.fa-circle-question:before {
     margin-right: 7px;
 }
 
