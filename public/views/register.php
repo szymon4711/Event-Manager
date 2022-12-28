@@ -11,7 +11,8 @@
 <div class="container">
     <div class="logo">
         <button class="home">
-            <i class="fa-solid fa-house"></i> Home
+            <i class="fa-solid fa-house"></i>
+            <a href="login">Home</a>
         </button>
         <img src="public/img/logo.svg">
     </div>

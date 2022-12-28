@@ -10,7 +10,8 @@
     <div class="container">
         <div class="logo">
             <button class="home">
-                <i class="fa-solid fa-house"></i> Home
+                <i class="fa-solid fa-user-plus"></i>
+                <a href="register">Register</a>
             </button>
             <img src="public/img/logo.svg">
         </div>

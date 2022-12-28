@@ -1,15 +1,3 @@
-body {
-    margin: 0;
-    font-family: 'Raleway', FontAwesome, cursive;
-}
-
-.base-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100vh;
-}
-
 input, textarea {
     background-color: transparent;
     border: none;
@@ -19,127 +7,6 @@ input, textarea {
     width: 50%;
     font-family: 'Raleway', FontAwesome, cursive;
 }
-
-nav {
-    width: 20vw;
-    height: 100%;
-    background: linear-gradient(195.61deg,
-    #7758D1 10.59%,
-    rgba(140, 124, 231, 0.72) 40.34%);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    position: relative;
-}
-
-main {
-    width: 80vw;
-}
-
-.title-bar {
-    background: rgba(0, 0, 0, 0.55);
-    border-radius: 20px;
-    box-shadow: 0 3px 6px gray;
-    color: white;
-    letter-spacing: 0.1em;
-    text-align: center;
-    width: 100%;
-    padding: 1em;
-}
-
-nav > img {
-    width: 60%;
-    margin: 2em auto;
-}
-
-a {
-    text-decoration: none;
-    display: inline-block;
-    line-height: 2em;
-}
-
-header .add-event a {
-    color: white;
-    line-height: normal;
-}
-
-li i {
-    font-size: 1.5em;
-}
-
-.button {
-    background: rgba(0, 0, 0, 0.55);
-    border-radius: 20px;
-    color: white;
-    margin-left: 1em;
-    text-align: center;
-    letter-spacing: 1px;
-    padding: 0.2em;
-    width: 60%;
-    box-shadow: 0 3px 6px gray;
-}
-
-ul {
-    list-style-type: none;
-    color: white;
-    font-family: 'Raleway', FontAwesome, cursive;
-    letter-spacing: 1px;
-    height: 100%;
-    margin: 0 auto;
-    padding: 0;
-    width: calc(100% - 40px);
-    position: relative;
-}
-
-li {
-    text-align: left;
-    margin: 1em;
-
-}
-
-li:last-child {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-.fa,
-.fas {
-    font-weight: 900;
-    width: 1em;
-}
-
-.fa-circle-check:before, .fa-circle-xmark:before, .fa-circle-question:before {
-    margin-right: 7px;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 1em 2em;
-    border-bottom: 1px solid gray;
-}
-
-.add-event {
-    background: rgba(0, 0, 0, 0.55);
-    border-radius: 20px;
-    box-shadow: 0 3px 6px gray;
-    color: white;
-    letter-spacing: 0.1em;
-    text-align: center;
-    width: 20%;
-    padding: 1em;
-    border: none;
-}
-
-
 
 .search-bar {
     width: 70%;
@@ -155,28 +22,12 @@ p {
     margin-top: 0;
 }
 
-.search-bar > input {
-    border-radius: 20px;
-    box-shadow: 0 3px 6px gray;
-    color: red;
-    width: 100%;
-    text-align: center;
-    color: gray;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-
 section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2em;
     padding: 2em;
     overflow: auto;
-}
-
-main {
-    background: #FFF6F4;
 }
 
 .events > div > img {
@@ -194,7 +45,6 @@ main {
     flex-direction: column;
     justify-content: space-around;
 }
-
 
 .events > div {
     border: 1px solid gray;
@@ -232,44 +82,18 @@ main {
     justify-content: space-between;
 }
 
-.line {
-    width: 3em;
-    height: .3em;
-    background: blue;
-    margin: .7em;
-    border-radius: 20px;
-    transition: .3s ease-in-out;
-}
-
-.burger {
-    background: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    display: none;
-}
-
-section.events-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.events-form > form {
-    display: flex;
-    flex-direction: column;
-}
-
-
 @media only screen and (max-device-width: 420px) {
 
-    .base-container {
-        flex-direction: column;
-        align-content: flex-start;
+    header {
+        height: 5vh;
     }
 
-    nav, main {
-        width: 100%;
+    .add-event, input {
+        font-size: 25px;
+    }
+
+    .search-bar, input {
+        height: 4vh;
     }
 
     nav {
@@ -280,7 +104,6 @@ section.events-form {
         height: 70%;
     }
 
-    /* ----------- */
     section {
         display: flex;
         flex-direction: column;
@@ -305,39 +128,6 @@ section.events-form {
         display: block;
         align-self: flex-end;
         transition: .3s ease-in-out;
-    }
-
-    ul {
-        top: 270px;
-        position: absolute;
-        height: 102vh;
-        background-color: gray;
-        flex-direction: column;
-        text-align: center;
-        width: 100vw;
-        right: 0;
-        justify-content: flex-start;
-        gap: 5vh;
-        display: none;
-    }
-
-    ul.active {
-        display: flex;
-
-    }
-
-    li:last-child {
-        position: relative;
-    }
-
-    li {
-        height: 5vh;
-    }
-
-    .button {
-        width: 80vw;
-        border-radius: 50px;
-        font-size: 50px;
     }
 
     nav > img {

@@ -1,7 +1,4 @@
-body {
-    margin: 0;
-    font-family: 'Raleway', FontAwesome, cursive;
-}
+
 
 .container {
     width: 100vw;
@@ -128,7 +125,8 @@ input {
 
     form.login, form.register{
         margin: auto;
-        height: 50vh;
+        height: 60vh;
+        width: 85vw;
     }
 
     form.register {

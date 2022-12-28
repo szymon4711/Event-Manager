@@ -4,6 +4,7 @@
 
 <head>
     <?php require('public/views/common/head.php'); ?>
+    <link rel="stylesheet" type="text/css" href="public/css/events.css">
     <title>My Events</title>
 </head>
 

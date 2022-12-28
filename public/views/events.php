@@ -4,6 +4,7 @@
 
 <head>
     <?php require('public/views/common/head.php'); ?>
+    <link rel="stylesheet" type="text/css" href="public/css/events.css">
     <script type="text/javascript" src="./public/js/search.js" defer></script>
     <script type="text/javascript" src="./public/js/stats.js" defer></script>
     <title>Events</title>

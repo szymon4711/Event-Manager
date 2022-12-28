@@ -4,6 +4,7 @@
 
 <head>
     <?php require('public/views/common/head.php'); ?>
+    <link rel="stylesheet" type="text/css" href="public/css/events.css">
     <link rel="stylesheet" type="text/css" href="public/css/notices.css">
     <title>Friends</title>
 </head>
@@ -18,11 +19,11 @@
                     <input name="friend" class="search" type="text" placeholder="&#xf234;  add a friend">
                 </div>
                 <button type="submit" class="add-event">
-                    <i class="fa-solid fa-user-plus"></i>
-                    Add
+                    <i class="fa-solid fa-user-plus">Add</i>
+
                 </button>
                 <div class="add-event">
-                    <?= $_SESSION['user_uuid'] ?>
+                    <i><?= $_SESSION['user_uuid'] ?></i>
                 </div>
             </form>
 
