@@ -16,11 +16,20 @@ class FriendNotificationRepository extends Repository
 
     public function getFriends() {
         $result = [];
+//        $stmt = $this->database->connect()->prepare(
+//            '
+//SELECT e.id, e.title, e.date, ud.name, ud.surname FROM events e JOIN users_events ue on e.id = ue.id_event join users u on u.id = ue.id_user join user_details ud on ud.id = u.id_user_details
+//         WHERE ue.id_user in (select get_friends(:id)) and ue.flag = true;'
+//        );
+
         $stmt = $this->database->connect()->prepare(
-            '
-SELECT e.id, e.title, e.date, ud.name, ud.surname FROM events e JOIN users_events ue on e.id = ue.id_event join users u on u.id = ue.id_user join user_details ud on ud.id = u.id_user_details
-         WHERE ue.id_user in (select get_friends(:id)) and ue.flag = true;'
-        );
+            'SELECT e.id, e.title, e.date, ud.name, ud.surname FROM events e
+                    JOIN users_events ue ON e.id = ue.id_event 
+                    JOIN users u ON u.id = ue.id_user 
+                    JOIN user_details ud ON ud.id = u.id_user_details
+                    WHERE ue.id_user IN (SELECT get_friends(:id)) 
+                      AND ue.flag = TRUE 
+                      AND ue.id_event IN (SELECT id_event FROM users_events WHERE id_user = :id);');
 
         $stmt->bindParam(':id', $_SESSION['user_id'], PDO::PARAM_INT);
         $stmt->execute();
