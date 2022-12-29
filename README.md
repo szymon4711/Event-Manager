@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 ![Logo](public/img/logo.svg)
-=======
->>>>>>> 7b2f76821121f6593302c3626ca41b5dbc67f44e
 # F3STIVALS - EVENT MANAGER
 
 Welcome to F3STIVALS - Event Manager, a tool for organizing and keeping track of events.
@@ -95,10 +92,8 @@ specifying events id and clicking 'Delete'.
 
 
 #### We hope you enjoy using F3STIVALS!<br>
-<<<<<<< HEAD
-=======
 ![Logo](public/img/logo.svg)
->>>>>>> 7b2f76821121f6593302c3626ca41b5dbc67f44e
+
 
 
 
