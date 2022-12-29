@@ -35,7 +35,7 @@ class EventRepository extends Repository
     {
         $result = [];
         $stmt = $this->database->connect()->prepare(
-            'SELECT * FROM events WHERE id_assigned_by = :id OR id in (SELECT id_event FROM users_events where id_user = :id AND flag = true) ORDER BY date'
+            'SELECT * FROM events WHERE id_assigned_by = :id OR id IN (SELECT id_event FROM users_events WHERE id_user = :id AND flag = true) ORDER BY date'
         );
         $stmt->bindParam(':id', $_SESSION['user_id'], PDO::PARAM_INT);
         return $this->getArrayOfEvents($stmt, $result);

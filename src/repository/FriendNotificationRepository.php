@@ -45,7 +45,7 @@ class FriendNotificationRepository extends Repository
     public function addFriends(string $uuid)
     {
         $stmt = $this->database->connect()->prepare(
-            'INSERT INTO friends values (?, ?)'
+            'INSERT INTO friends VALUES (?, ?)'
         );
         $stmt->execute([
             $_SESSION['user_id'],
@@ -57,7 +57,7 @@ class FriendNotificationRepository extends Repository
     private function getUserByUUID(string $uuid)
     {
         $stmt = $this->database->connect()->prepare(
-            'SELECT * FROM users where uuid = :uuid'
+            'SELECT * FROM users WHERE uuid = :uuid'
         );
         $stmt->bindParam(':uuid', $uuid, PDO::PARAM_STR);
         $stmt->execute();
