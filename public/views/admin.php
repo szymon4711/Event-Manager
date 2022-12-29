@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 
-<?php require('public/views/common/session_validator.php') ?>
+<?php require('public/views/common/session_validator.php');
+if ($_SESSION['admin'] === false) {
+    $url = "http://$_SERVER[HTTP_HOST]";
+    header("Location: {$url}/events");
+}
+?>
 
 <head>
     <?php require('public/views/common/head.php'); ?>

@@ -1,24 +1,27 @@
 <?php
 
 require_once 'AppController.php';
-require_once __DIR__.'/../models/User.php';
-require_once __DIR__.'/../repository/UserRepository.php';
+require_once __DIR__ . '/../models/User.php';
+require_once __DIR__ . '/../repository/UserRepository.php';
 
 class SecurityController extends AppController
 {
     private $userRepository;
+
     public function __construct()
     {
         parent::__construct();
         $this->userRepository = new UserRepository();
     }
 
-    public function logout() {
+    public function logout()
+    {
         session_destroy();
         return $this->render('login', ['messages' => ['You have been logged out successfully']]);
     }
 
-    public function login() {
+    public function login()
+    {
 
         if (!$this->isPost()) {
             return $this->render('login');
@@ -27,7 +30,7 @@ class SecurityController extends AppController
         $username = $_POST["username"];
         $password = $_POST["password"];
 
-        try{
+        try {
             $user = $this->userRepository->getUser($username);
         } catch (Exception $error) {
             return $this->render('login', ["messages" => [$error->getMessage()]]);
@@ -38,7 +41,7 @@ class SecurityController extends AppController
         }
 
         $_SESSION['user_id'] = $this->userRepository->getId();
-        $_SESSION['user_details'] = $user->getName().' '.$user->getSurname();
+        $_SESSION['user_details'] = $user->getName() . ' ' . $user->getSurname();
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/events");
@@ -98,6 +101,8 @@ class SecurityController extends AppController
         $user->setEmail($email);
 
         $this->userRepository->updateUser($user);
+        $_SESSION['user_details'] = $name . ' ' . $surname;
 
-        return $this->render('settings');    }
+        return $this->render('settings');
+    }
 }

@@ -5,7 +5,7 @@ class FriendNotificationRepository extends Repository
     public function getNotifications() {
         $result = [];
         $stmt = $this->database->connect()->prepare(
-            'SELECT * FROM events WHERE (id_assigned_by = :id OR id = (SELECT id_event FROM users_events where id_user = :id AND flag = true))
+            'SELECT * FROM events WHERE (id_assigned_by = :id OR id in (SELECT id_event FROM users_events where id_user = :id AND flag = true))
                        AND date_part(\'day\', age(date, current_date)) < 7 ORDER BY date;
 '
         );

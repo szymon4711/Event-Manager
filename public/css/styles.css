@@ -62,7 +62,7 @@ li i {
     text-align: center;
     letter-spacing: 1px;
     padding: 0.2em;
-    width: 60%;
+    width: 70%;
     box-shadow: 0 3px 6px gray;
 }
 
@@ -174,10 +174,6 @@ main {
 
     nav, main {
         width: 100%;
-    }
-
-    main {
-        height: 70%;
     }
 
     section {

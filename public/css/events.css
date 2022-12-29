@@ -86,6 +86,28 @@ section {
     justify-content: space-between;
 }
 
+.description {
+    overflow: auto;
+    max-height: 100px;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    visibility: hidden;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 10px;
+    visibility: hidden;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555555;
+    visibility: visible;
+}
+
+
 @media only screen and (max-device-width: 420px) {
 
     header {
@@ -104,11 +126,8 @@ section {
         height: 12%;
     }
 
-    main {
-        height: 70%;
-    }
 
-    section {
+    .events {
         display: flex;
         flex-direction: column;
         overflow: auto;
@@ -117,7 +136,7 @@ section {
     .events > div {
 
         border-radius: 1em;
-        height: 700px;
+        height: 1000px;
         font-size: 30px;
         display: flex;
         flex-direction: column;
@@ -136,5 +155,9 @@ section {
 
     nav > img {
         margin-bottom: 0;
+    }
+
+    .description {
+        max-height: 330px;
     }
 }
