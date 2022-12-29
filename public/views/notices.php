@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php require('public/views/common/session_validator.php') ?>
+<?php require('public/views/common/sessionValidator.php') ?>
 
 <head>
     <?php require('public/views/common/head.php'); ?>
@@ -25,7 +25,8 @@
                     <div>
                         <div>
                             <h3>NOTIFICATION</h3>
-                            <p>The event with the title '<span style="font-weight: bold"><?=$event->getTitle() ?></span>
+                            <p>The event with the title '
+                                <span style="font-weight: bold"><?=$event->getTitle() ?></span>
                                 ' will take place in less than 7 days. You can't miss there!
                                 <span style="float: right"><?=$event->getDate()?></span>
                             </p>

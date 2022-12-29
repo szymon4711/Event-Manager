@@ -91,6 +91,11 @@ section {
     max-height: 100px;
 }
 
+.events-form {
+    display: flex;
+    flex-direction: column;
+}
+
 ::-webkit-scrollbar {
     width: 4px;
     visibility: hidden;

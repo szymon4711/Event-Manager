@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php require('public/views/common/session_validator.php') ?>
+<?php require('public/views/common/sessionValidator.php') ?>
 
 <head>
     <?php require('public/views/common/head.php'); ?>
@@ -20,13 +20,11 @@
                 </div>
                 <button type="submit" class="add-event">
                     <i class="fa-solid fa-user-plus">Add</i>
-
                 </button>
                 <div class="add-event">
                     <i><?= $_SESSION['user_uuid'] ?></i>
                 </div>
             </form>
-
         </header>
 
         <section class="notifications">
@@ -35,8 +33,8 @@
                     <div>
                         <div>
                             <h3><?= $friend->getName() . ' ' . $friend->getSurname() ?></h3>
-                            <p>Your friend will be at the same event as you! Event title - '<span
-                                        style="font-weight: bold"><?= $friend->getTitle() ?></span>'
+                            <p>Your friend will be at the same event as you! Event title - '
+                                <span style="font-weight: bold"><?= $friend->getTitle() ?></span>'
                                 <span style="float: right"><?= $friend->getDate() ?></span>
                             </p>
                         </div>

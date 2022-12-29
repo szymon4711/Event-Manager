@@ -2,8 +2,6 @@ const likeButtons = document.querySelectorAll('.fa-circle-check');
 const dislikeButtons = document.querySelectorAll('.fa-circle-xmark');
 const uncertainButtons = document.querySelectorAll('.fa-circle-question');
 
-
-
 function incrementStats(eventType) {
     let flag = false;
     const button = this;
@@ -25,8 +23,8 @@ function incrementStats(eventType) {
                 flag = true;
         });
 
-        if (flag)  // flag is visible here
-            return;  // exit the function
+        if (flag)
+            return;
 
         fetch(`/${eventType}/${id}`)
             .then(function () {
@@ -34,9 +32,6 @@ function incrementStats(eventType) {
             });
     });
 }
-
-
-
 
 likeButtons.forEach(button => button.addEventListener("click", incrementStats.bind(button, "like")));
 dislikeButtons.forEach(button => button.addEventListener("click", incrementStats.bind(button, "dislike")));

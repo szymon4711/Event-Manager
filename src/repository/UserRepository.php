@@ -53,9 +53,10 @@ class UserRepository extends Repository
         ]);
     }
 
-    public function updateUser(User $user) {
+    public function updateUser(User $user)
+    {
         $stmt = $this->database->connect()->prepare(
-        'WITH identity AS (UPDATE users SET username = ?, password = ? WHERE id = ? RETURNING id_user_details)
+            'WITH identity AS (UPDATE users SET username = ?, password = ? WHERE id = ? RETURNING id_user_details)
                 UPDATE user_details SET name = ?, surname = ?, email = ? WHERE id = (SELECT id_user_details FROM identity);'
         );
         $stmt->execute([

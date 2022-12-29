@@ -6,7 +6,7 @@ require_once __DIR__ . '/../repository/UserRepository.php';
 
 class SecurityController extends AppController
 {
-    private $userRepository;
+    private UserRepository $userRepository;
 
     public function __construct()
     {
@@ -22,7 +22,6 @@ class SecurityController extends AppController
 
     public function login()
     {
-
         if (!$this->isPost()) {
             return $this->render('login');
         }

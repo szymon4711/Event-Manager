@@ -1,13 +1,13 @@
 <?php
 
 require_once 'AppController.php';
-require_once __DIR__.'/../models/Event.php';
-require_once __DIR__.'/../models/Friend.php';
-require_once __DIR__.'/../repository/FriendNotificationRepository.php';
+require_once __DIR__ . '/../models/Event.php';
+require_once __DIR__ . '/../models/Friend.php';
+require_once __DIR__ . '/../repository/FriendNotificationRepository.php';
 
 class FriendNotificationController extends AppController
 {
-    private $friendNotificationRepository;
+    private FriendNotificationRepository $friendNotificationRepository;
 
     public function __construct()
     {
@@ -15,17 +15,20 @@ class FriendNotificationController extends AppController
         $this->friendNotificationRepository = new FriendNotificationRepository();
     }
 
-    public function notices() {
+    public function notices()
+    {
         $events = $this->friendNotificationRepository->getNotifications();
         $this->render('notices', ['events' => $events]);
     }
 
-    public function friends() {
+    public function friends()
+    {
         $friends = $this->friendNotificationRepository->getFriends();
         $this->render('friends', ['friends' => $friends]);
     }
 
-    public function addFriends(){
+    public function addFriends()
+    {
         $this->friendNotificationRepository->addFriends($_POST['friend']);
         $this->friends();
     }

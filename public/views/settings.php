@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php require('public/views/common/session_validator.php') ?>
+<?php require('public/views/common/sessionValidator.php') ?>
 
 <head>
     <?php require('public/views/common/head.php'); ?>

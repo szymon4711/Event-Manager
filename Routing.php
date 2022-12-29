@@ -9,15 +9,18 @@ class Routing {
 
     public static $routes;
 
-    public static function get($url, $view) {
+    public static function get($url, $view): void
+    {
         self::$routes[$url] = $view;
     }
 
-    public static function post($url, $view) {
+    public static function post($url, $view): void
+    {
         self::$routes[$url] = $view;
     }
 
-    public static function run($url) {
+    public static function run($url): void
+    {
         $urlParts = explode("/", $url);
         $action = $urlParts[0];
 

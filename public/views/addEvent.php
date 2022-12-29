@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php require('public/views/common/session_validator.php') ?>
+<?php require('public/views/common/sessionValidator.php') ?>
 
 <head>
     <?php require('public/views/common/head.php'); ?>
@@ -13,15 +13,9 @@
     <?php require('public/views/common/navbar.php'); ?>
     <main>
         <header>
-            <div class="search-bar">
-                <form>
-                    <input type="text" placeholder="&#xf002;  search event">
-                </form>
-            </div>
-
-            <div class="add-event">
+            <div class="title-bar">
                 <i class="fa-solid fa-plus"></i>
-                add event
+                ADD EVENT
             </div>
         </header>
 
@@ -47,5 +41,4 @@
         </section>
     </main>
 </div>
-
 </body>
