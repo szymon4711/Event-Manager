@@ -28,8 +28,8 @@ In the console, enter the command `docker-compose up` and go to the browser to *
 
 
 ## General Information
-F#STIVALS is a tool that allows users to organize and keep track of events such as concerts, hackathons and more.
-With F3STIVALS users can:
+##### F3STIVALS is a tool that allows users to organize and keep track of events such as concerts, hackathons and more. With F3STIVALS users can:
+
 * [Create and login to your account](#create-and-login-to-your-account)
 * [Add events](#add-events)
 * [See a list of all events](#see-a-list-of-all-events)
